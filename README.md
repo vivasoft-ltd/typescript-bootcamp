@@ -8,5 +8,5 @@
 ### টাইপস্ক্রিপ্ট কেন?
 
 ## To get started
-1. [Basic Types](1.%20basic-types)
-2. [Advanced Types](2.%20advanced-types)
+1. [Basic](1.%20basic)
+2. [Advanced](2.%20advanced)
