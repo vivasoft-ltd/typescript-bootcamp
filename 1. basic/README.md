@@ -4,3 +4,4 @@
 2. [Tuple-Enum-Generic (টুপল-এনাম-জেনেরিক)](2.%20tuple-enum-generic)
 3. [Functions (ফাংশন)](3.%20functions)
 4. [Classes (ক্লাস)](4.%20classes)
+5. [Basic Typescript (বেসিক টাইপস্ক্রিপ্ট)](5.%20typescript-basics)
