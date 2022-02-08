@@ -13,7 +13,6 @@ interface IPerson {
    sayHi: () => string 
 } 
 ```
-- `interface` হল একটি কীওয়ার্ড যা একটি টাইপস্ক্রিপ্ট interface ডিক্লেয়ার করতে ব্যবহৃত হয়।
 - `IPerson` হল ইন্টারফেসের নাম।
 - `firstName` and `lastName` হল ইন্টারফেস বডি ভেরিয়েবল এবং `sayHi` হল Interface ফাংশন।
 
@@ -23,13 +22,13 @@ interface IPerson {
 interface IPerson { 
    firstName: string, 
    lastName: string, 
-   sayHi: ()=>string 
+   sayHi: () => string 
 } 
 
-var customer:IPerson = { 
+const customer: IPerson = { 
    firstName: "Tom",
    lastName: "Hanks", 
-   sayHi: ():string =>{return "Hi there"} 
+   sayHi: () => "Hi there" 
 } 
 
 console.log("Customer Object ") 
@@ -37,37 +36,37 @@ console.log(customer.firstName)
 console.log(customer.lastName) 
 console.log(customer.sayHi())  
 
-var employee:IPerson = { 
+const employee: IPerson = { 
    firstName: "Jim",
    lastName: "Blakes", 
-   sayHi: ():string =>{return "Hello!!!"} 
+   sayHi: () => "Hello!!!" 
 } 
-  
-console.log("Employee  Object ") 
+
+console.log("Employee Object") 
 console.log(employee.firstName);
 console.log(employee.lastName);
 ```
-উদাহরণ একটি Interface সংজ্ঞায়িত করে। কাস্টমার অবজেক্ট আইপারসন টাইপের। সুতরাং, ইন্টারফেসের দ্বারা নির্দিষ্ট করা সমস্ত বৈশিষ্ট্যগুলিকে সংজ্ঞায়িত করার জন্য এটি এখন অবজেক্টের উপর বাধ্যতামূলক হবে।
+উদাহরণটি একটি Interface ডিফাইন করে। কাস্টমার অবজেক্ট `IPerson` টাইপের। সুতরাং, ইন্টারফেসের সাহায্যে নির্ধারিত করা সমস্ত প্রপার্টিজগুলোকে ডিফাইন করার জন্য এটি এখন অবজেক্টের উপর বাধ্যতামূলক করা হবে।
 
 
 #### Interfaces and Inheritance
-একটি Interface অন্যান্য Interface দ্বারা প্রসারিত করা যেতে পারে. অন্য কথায়, একটি Interface অন্য Interface থেকে উত্তরাধিকার সূত্রে প্রাপ্ত হতে পারে। টাইপস্ক্রিপ্ট একটি Interface কে একাধিক Interface থেকে উত্তরাধিকার সূত্রে প্রাপ্ত করার অনুমতি দেয়।
+একটি Interface অন্যান্য Interface দ্বারা Extend করা যেতে পারে। অন্য কথায়, একটি Interface অন্য Interface থেকে Inherite করতে পারে। টাইপস্ক্রিপ্টে একটি Interface কে একাধিক Interface থেকে Inherite করা যায়।
 
 interfaces এর মধ্যে inheritance প্রয়োগ করতে `extends` কীওয়ার্ড ব্যবহার করুন।
 ```
 interface Person { 
-   age:number 
+   age: number 
 } 
 
 interface Musician extends Person { 
-   instrument:string 
+   instrument: string 
 } 
 
-var drummer = <Musician>{}; 
-drummer.age = 27 
-drummer.instrument = "Drums" 
-console.log("Age:  "+drummer.age)
-console.log("Instrument:  "+drummer.instrument)
+const drummer = <Musician>{}; 
+drummer.age = 27;
+drummer.instrument = "Drums";
+console.log("Age:  "+ drummer.age);
+console.log("Instrument:  "+ drummer.instrument);
 ```
 এর আউটপুট নিম্নরূপ -
 ```
