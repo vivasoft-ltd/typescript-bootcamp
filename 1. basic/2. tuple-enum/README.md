@@ -135,3 +135,75 @@ CarType.Subaru; // returns 15
 ```
 
 উপরের উদাহরণটিতে `getCarTypeCode` ফাংশনটি থেকে কম্পিউটেড ভ্যালুটি `Toyota` তে initialize করা হয়েছে। আজ এনাম নিয়ে এ পর্যন্তই।
+
+## টাপল
+একটি টাপল হল আরেক ধরণের অ্যারে `(Array)`| এতে কতগুলো এলিমেন্ট আছে , কার কি ডেটা টাইপ এবং ইনডেক্স তা টাপল জানে 
+
+
+#### **সিন্টেক্স**
+```
+let tulpleName:[data type, data type] = [value,value]
+```
+
+#### **কোড**
+
+নিচের কোডটি টাপল কিভাবে তৈরি করতে হবে এবং তাতে কিভাবে ভ্যালু এসাইন করতে হয় তা দেখানো হয়েছে :
+
+- `datesAndMonths`: টাপল এর নাম।
+- `[number,string]`: প্রদত্ত ক্রমে টাপলে সংরক্ষিত ডেটা প্রকারগুলি।
+- `[5,"january"]`: টপলে এসাইন ভ্যালু।
+```
+//tuple creation
+let datesAndMonths:[number,string] = [5,"january"]
+console.log(datesAndMonths)
+```
+
+আসুন ভ্যালু গুলোর ক্রম পরিবর্তন করার চেষ্টা করি। নিম্নলিখিত কোড স্নিপেটে লক্ষ্য করুন:
+
+```
+//changing the order of the elements.
+let datesAndMonths:[number,string] = ["january",5]
+console.log(datesAndMonths)
+```
+
+**Output**
+```
+index.ts(2,39): error TS2322: Type 'string' is not assignable to type 'number'.
+index.ts(2,49): error TS2322: Type 'number' is not assignable to type 'string'.
+```
+
+#### **ইনডেক্সিং**
+
+একটি টাপল এ প্রতিটি উপাদান কিছু ইনডেক্স দ্বারা চিহ্নিত করা হয়.
+ইন্ডেক্সিং 0 দিয়ে শুরু হয় এবং n-1 দিয়ে শেষ হয়, যেখানে n হল টিপলের উপাদানের সংখ্যা।
+ইনডেক্স বাম থেকে ডানে এসাইন করা হয়।
+যদি আমাদের  [2,3,5,7] এলিমেন্টের একটি টাপল থাকে, তাহলে:
+- এলিমেন্ট ২ এর ইনডেক্স হবে 0
+- এলিমেন্ট ৩ এর ইনডেক্স হবে ১
+- এলিমেন্ট ৫ এর ইনডেক্স হবে ২
+- এলিমেন্ট ৭ এর ইনডেক্স হবে ৩
+
+
+#### **এলিমেন্ট কিভাবে এক্সেস করতে হয়? **
+
+আমরা একটি টাপল ভিতরে এলিমেন্ট অ্যাক্সেস করতে ইনডেক্স ব্যবহার করি
+
+```
+let primes:[number,number,number] = [2,3,5]
+
+//accessing first element in tuple
+console.log(primes[0])
+
+//accessing second element in tuple
+console.log(primes[1])
+```
+
+#### **রিড-ওনলি (Read-only)**
+আমরা যখন যেকোন জায়গায় টাপল পাস করি সেখানে আমরা টাপলকে  শুধুমাত্র পড়ার জন্য সীমাবদ্ধ করতে পারি যাতে কেউ আসল টাপল পরিবর্তন করতে না পারে। নিম্নলিখিত কোড স্নিপেটে, আমরা শুধুমাত্র `readonly` কীওয়ার্ড দিয়ে ডেটা তৈরি করেছি 5 নং লাইনে, আমরা `readonly` টাপল এর  ডেটা পরিবর্তন করার চেষ্টা করেছি। এটি একটি এরর দেখাবে।
+```
+//making tuple as read only
+let data:readonly[string,number] = ["abc",5];
+
+//trying to modify tuple
+data[0] = "qwerty";
+```
